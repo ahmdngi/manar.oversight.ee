@@ -784,7 +784,7 @@ class="hfeed site" id="page">
 							<div class="elementor-counter">
 			<div class="elementor-counter-title">Certificates</div>			<div class="elementor-counter-number-wrapper">
 				<span class="elementor-counter-number-prefix"></span>
-				<span class="elementor-counter-number" data-duration="0" data-to-value="50" data-from-value="50">50</span>
+				<span class="elementor-counter-number" data-duration="2000" data-to-value="50" data-from-value="0">50</span>
 				<span class="elementor-counter-number-suffix"></span>
 			</div>
 		</div>
@@ -795,7 +795,7 @@ class="hfeed site" id="page">
 							<div class="elementor-counter">
 			<div class="elementor-counter-title">employees</div>			<div class="elementor-counter-number-wrapper">
 				<span class="elementor-counter-number-prefix"></span>
-				<span class="elementor-counter-number" data-duration="0" data-to-value="1248" data-from-value="1248" data-delimiter=",">1248</span>
+				<span class="elementor-counter-number" data-duration="2000" data-to-value="1248" data-from-value="0" data-delimiter=",">1248</span>
 				<span class="elementor-counter-number-suffix"></span>
 			</div>
 		</div>
@@ -806,7 +806,7 @@ class="hfeed site" id="page">
 							<div class="elementor-counter">
 			<h2 class="elementor-counter-title">products</h2>			<div class="elementor-counter-number-wrapper">
 				<span class="elementor-counter-number-prefix"></span>
-				<span class="elementor-counter-number" data-duration="0" data-to-value="40" data-from-value="40" data-delimiter=",">40</span>
+				<span class="elementor-counter-number" data-duration="2000" data-to-value="40" data-from-value="0" data-delimiter=",">40</span>
 				<span class="elementor-counter-number-suffix"></span>
 			</div>
 		</div>
@@ -817,7 +817,7 @@ class="hfeed site" id="page">
 							<div class="elementor-counter">
 			<div class="elementor-counter-title">completed project</div>			<div class="elementor-counter-number-wrapper">
 				<span class="elementor-counter-number-prefix"></span>
-				<span class="elementor-counter-number" data-duration="0" data-to-value="800" data-from-value="800" data-delimiter=",">800</span>
+				<span class="elementor-counter-number" data-duration="2000" data-to-value="800" data-from-value="0" data-delimiter=",">800</span>
 				<span class="elementor-counter-number-suffix"></span>
 			</div>
 		</div>
@@ -1037,6 +1037,24 @@ class="hfeed site" id="page">
     </div>
   </div>
 
+
+<script>
+
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+var c=document.querySelectorAll(".elementor-counter-number");
+c.forEach(function(e){
+var t=parseInt(e.getAttribute("data-to-value")||"0");
+var d=parseInt(e.getAttribute("data-duration")||"2000");
+var f=parseInt(e.getAttribute("data-from-value")||"0");
+e.textContent=f;var s=null;
+function a(ts){if(!s)s=ts;var p=Math.min((ts-s)/d,1);
+var e2=1-Math.pow(1-p,3);
+var cur=Math.round(f+(t-f)*e2);
+e.textContent=cur.toLocaleString();
+if(p<1)requestAnimationFrame(a)}
+requestAnimationFrame(a)});});
+</script>
 </body>
 </html>
 				</div>
@@ -2516,7 +2534,25 @@ class="hfeed site" id="page">
 
       });
     </script>
-  </body>
+  
+<script>
+
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+var c=document.querySelectorAll(".elementor-counter-number");
+c.forEach(function(e){
+var t=parseInt(e.getAttribute("data-to-value")||"0");
+var d=parseInt(e.getAttribute("data-duration")||"2000");
+var f=parseInt(e.getAttribute("data-from-value")||"0");
+e.textContent=f;var s=null;
+function a(ts){if(!s)s=ts;var p=Math.min((ts-s)/d,1);
+var e2=1-Math.pow(1-p,3);
+var cur=Math.round(f+(t-f)*e2);
+e.textContent=cur.toLocaleString();
+if(p<1)requestAnimationFrame(a)}
+requestAnimationFrame(a)});});
+</script>
+</body>
 </html>
 
 
@@ -4474,7 +4510,25 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
 <script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
 if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
 images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
-if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script>	</body>
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script>	
+<script>
+
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+var c=document.querySelectorAll(".elementor-counter-number");
+c.forEach(function(e){
+var t=parseInt(e.getAttribute("data-to-value")||"0");
+var d=parseInt(e.getAttribute("data-duration")||"2000");
+var f=parseInt(e.getAttribute("data-from-value")||"0");
+e.textContent=f;var s=null;
+function a(ts){if(!s)s=ts;var p=Math.min((ts-s)/d,1);
+var e2=1-Math.pow(1-p,3);
+var cur=Math.round(f+(t-f)*e2);
+e.textContent=cur.toLocaleString();
+if(p<1)requestAnimationFrame(a)}
+requestAnimationFrame(a)});});
+</script>
+</body>
 </html>
 
 <!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1783753633 -->
